@@ -136,7 +136,7 @@ a:focus-visible {
 /* || DASH HEADER, CONTAINER & FOOTER */
 
 .dash-header {
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 1;
   background-color: var(--BGCOLOR);
@@ -169,7 +169,7 @@ a:focus-visible {
 
 .dash-footer {
   font-size: 1rem;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   z-index: 1;
   background-color: var(--BGCOLOR);
@@ -211,7 +211,7 @@ tr {
 }
 
 .table__thead {
-  position: sticky;
+  position: -sticky;
   top: 0;
   z-index: 1;
 }
@@ -266,7 +266,7 @@ tr {
 .form__checkbox-container {
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: min-content;
   gap: 0.5em;
 }
 
@@ -304,7 +304,7 @@ tr {
 }
 
 .form__select {
-  width: fit-content; 
+  width: min-content; 
   padding: 0.25em;
 }
 
