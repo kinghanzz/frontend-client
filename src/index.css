@@ -10,18 +10,19 @@
 
 :root {
   /* COLORS */
-  --BGCOLOR: #00ABB3;
+  --BGCOLOR: #0F172A;
   --BORDER-COLOR: #FFF;
   --COLOR: #FFF;
   --ERROR: firebrick;
   --INACTIVE: lightgray;
-  --LINK-COLOR: #3C4048;
-  --LINK-HOVER: #EAEAEA;
+  --LINK-COLOR: whitesmoke;
+  --LINK-HOVER: rgba(245, 245, 245, 0.9);
   --NOTE-BGCOLOR: hsla(240, 64%, 27%, 0.65);
   --STATUS-COMPLETE: limegreen;
   --STATUS-OPEN: firebrick;
   --TABLE-BGCOLOR: #FFF;
   --TABLE-COLOR: #000;
+  --INPUT-INVALID: #F00;
 }
 
 /* || UTILITY CLASSES */
@@ -67,10 +68,11 @@
 body {
   font-family: 'Nunito', sans-serif;
   min-height: 100vh;
-  background-color: #EAEAEA;
-  color: #3C4048;
+  background-color: var(--BGCOLOR);
+  color: var(--COLOR);
+  background-image: url('./img/background.jpg');
   background-size: cover;
-  background-position: top;
+  background-position: top right;
   background-blend-mode: multiply;
 }
 
@@ -92,8 +94,7 @@ a {
   text-decoration: none;
 }
 
-a,
-a:visited {
+a:any-link {
   color: var(--LINK-COLOR);
 }
 
@@ -126,7 +127,6 @@ a:focus-visible {
 
 .public__addr {
   margin-top: 1em;
-  color:#3C4048;
 }
 
 .welcome a::before {
@@ -149,6 +149,10 @@ a:focus-visible {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.dash-header__container--small {
+  max-width: 800px;
 }
 
 .dash-header__nav {
@@ -182,6 +186,7 @@ a:focus-visible {
   width: auto;
   height: auto;
 }
+
 /* || TABLES - GENERAL */
 
 thead,
@@ -289,10 +294,9 @@ tr {
 }
 
 .form__input--incomplete {
-  border: 1px solid red;
-  outline: 1px solid red;
+  border: 1px solid var(--INPUT-INVALID);
+  outline: 1px solid var(--INPUT-INVALID);
 }
-
 
 .form__checkbox {
   width: 24px;
@@ -325,36 +329,6 @@ tr {
   gap: 0.5em;
 }
 
-.bottom{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.leftsocial{
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.rightsocial{
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.social{
-  display: flex;
-  gap: 20px;
-}
-.link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 @media screen and (max-width: 400px) {
   h1 {
     font-size: 2rem;
@@ -368,6 +342,7 @@ tr {
     font-size: 1.5rem;
   }
 }
+
 
 @media screen and (min-width: 768px) {
 
